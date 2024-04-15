@@ -1,8 +1,11 @@
 <template>
-    <div class="container bg-white p-3 row " id="cardL">
-        <div class="p-2 bg-black text-white fw-bold ">Found: {{ store.current_rows }} Cards</div>
-        <div class="col-12 col-md-6 col-lg-3" v-for="card in store.cards" :key="card.id">
-            <CardComponent :id="card.id" :image="card.card_images[0].image_url" :name="card.name" :archetype="card.archetype" />
+    <div class="container">
+        <div class="bg-black text-white fw-bold my-3 p-3 fs-4">Found: {{ store.current_rows }} Cards</div>
+        <div class=" bg-white  row row-cols-2 row-cols-lg-5 g-2 g-lg-3  ">
+            <div class="  p-0" v-for="card in store.cards" :key="card.id">
+                <CardComponent :id="card.id" :image="card.card_images[0].image_url" :name="card.name"
+                    :archetype="card.archetype" />
+            </div>
         </div>
     </div>
 </template>
@@ -26,6 +29,4 @@
 </script>
 
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

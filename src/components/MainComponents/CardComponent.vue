@@ -1,12 +1,12 @@
 <template>
-    <div class="card" style="width: 18rem;">
+    <div class="card m-2 mt-0">
         <img class="card-img-top" :src="image" :alt="name">
-        <div class="card-body">
-          <p class="card-text">
-            <span>{{ name }}</span>
+        <div class="card-body p-0 textC">
+          <div  class="card-text p-3 text-center">
+            <div class="text-white text-uppercase fw-bold">{{ name }}</div>
             <br>
             <span>{{ archetype }}</span>
-          </p>
+          </div>
         </div>
       </div>
 </template>
@@ -25,5 +25,16 @@
 </script>
 
 <style lang="scss" scoped>
+@use '../../assets/styles/partials/variables' as *;
+
+.textC{
+    background-color: $bg-body-color;
+    min-height: 130px;
+
+}
+
+
+
+
 
 </style>
