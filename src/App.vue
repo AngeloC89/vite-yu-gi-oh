@@ -22,8 +22,9 @@ import MainComponent from './components/MainComponent.vue';
     },
     methods: {
       getCards() {
-        axios
-        .get(this.store.apiUrl)
+        this.store.loading = true
+
+        axios.get(this.store.apiUrl)
         .then((res) => {
           this.store.cards = res.data.data 
           this.store.current_rows = res.data.meta.current_rows
@@ -33,6 +34,8 @@ import MainComponent from './components/MainComponent.vue';
         })
         .catch((error) => {
           console.log(error);
+        }).finally(() => {
+          this.store.loading = false
         });
         
       }
