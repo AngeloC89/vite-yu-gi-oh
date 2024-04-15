@@ -1,15 +1,24 @@
 <template>
-    <div>
+    <main class="container bg-white p-4 ">
+        <CardList />
 
-    </div>
+    </main>
 </template>
 
 <script>
+    import CardList from './MainComponents/CardList.vue'
     export default {
-        name: 'MainComponent'
+        name: 'MainComponent',
+        components: {
+            CardList
+        }
     }
 </script>
 
 <style lang="scss" scoped>
+    main {
+        margin: 100px auto;
+      
 
+    }
 </style>
