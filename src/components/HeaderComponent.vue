@@ -8,10 +8,9 @@
     </div>
 
 
-    <select class="form-select my-5 container " @change="$emit('statusSearch')" v-model="store.status">
+    <select class="form-select my-5 container " @change="$emit('statusChange')" v-model="store.status">
         <option value="">All</option>
         <option :value="arch.archetype_name" v-for="arch in store.archetypeSel">{{ arch.archetype_name }}</option>
-
     </select>
 </template>
 

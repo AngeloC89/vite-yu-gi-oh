@@ -1,5 +1,5 @@
 <template>
-  <HeaderComponent />
+  <HeaderComponent @statusChange="setParameters" />
   <MainComponent />
 </template>
 
@@ -21,7 +21,12 @@
       }
     },
     methods: {
-    
+      setParameters(){
+        if(this.store.status){
+          this.store.options.params.archetype = this.store.status
+        }
+        this.getCards();
+      },
       getCards() {
         this.store.loading = true
 
@@ -33,7 +38,7 @@
             console.log(this.store.cards)
             console.log(this.store.current_rows)
           }).catch((error) => {
-            console.log(error);
+           // console.log(error);
           }).finally(() => {
             this.store.loading = false;
           });
@@ -43,15 +48,16 @@
         axios.get(this.store.apiUrl + this.store.endPoint.archetype)
           .then((res) => {
             this.store.archetypeSel = res.data.slice(200, 215);
-            console.log(this.store.archetypeSel);
-            console.log(this.status)
+            //console.log(this.store.archetypeSel);
+            
           });
       },
+
     },
     created() {
-      //this.getCards()
-     this.getArchetypeSel();
-     
+      this.getCards()
+      this.getArchetypeSel();
+
 
     },
   }

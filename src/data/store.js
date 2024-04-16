@@ -10,12 +10,13 @@ export const store = reactive({
     params:{
       num: 20,
       offset: 0,
+      archetype: '',
       
     }
   },
-  status:'',
-  archetypeSel:[],
-  cards: [],
+  status:'',// get the value of select option of archetype
+  archetypeSel:[],//charge all the archetypes on this array
+  cards: [],//container the cards
   current_rows: 0,
   loading: false,
 });
