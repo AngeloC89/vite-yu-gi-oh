@@ -21,6 +21,4 @@ export const store = reactive({
   loading: false,
 });
 
-// "Noble Knight"
-// "Alien"
-// "Melodious"
+
