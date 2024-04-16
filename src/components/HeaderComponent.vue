@@ -6,8 +6,6 @@
 
         <h1>Yu-Gi-Oh Api</h1>
     </div>
-
-
     <select class="form-select my-5 container " @change="$emit('statusChange')" v-model="store.status">
         <option value="">All</option>
         <option :value="arch.archetype_name" v-for="arch in store.archetypeSel">{{ arch.archetype_name }}</option>
@@ -18,6 +16,7 @@
 import { store } from '../data/store';
     export default {
         name: 'HeaderComponent',
+        emits:['statusChange'],
         data() {
             return {
                 store
