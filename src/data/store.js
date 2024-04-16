@@ -13,6 +13,7 @@ export const store = reactive({
       
     }
   },
+  status:'',
   archetypeSel:[],
   cards: [],
   current_rows: 0,
