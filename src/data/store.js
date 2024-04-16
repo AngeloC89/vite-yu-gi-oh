@@ -1,8 +1,24 @@
-import { reactive } from 'vue'
+import { reactive } from "vue";
 
 export const store = reactive({
-    apiUrl: "https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0",
-    cards: [],
-    current_rows: 0,
-    loading:false,
+  apiUrl: "https://db.ygoprodeck.com/api/v7/",
+  endPoint: {
+    cards: "cardinfo.php",
+    archetype: "archetypes.php",
+  },
+  options: {
+    params:{
+      num: 20,
+      offset: 0,
+      
+    }
+  },
+  archetypeSel:[],
+  cards: [],
+  current_rows: 0,
+  loading: false,
 });
+
+// "Noble Knight"
+// "Alien"
+// "Melodious"

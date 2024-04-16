@@ -6,6 +6,14 @@
 
         <h1>Yu-Gi-Oh Api</h1>
     </div>
+
+
+    <select class="form-select my-5 container " @change="$emit('statusSearch')"  v-model="status">
+        <option value="">All</option>
+        <option value="avlive">Alive</option>
+        <option value="dead">Dead</option>
+        <option value="unknown">Unknown</option>
+      </select>
 </template>
 
 <script>

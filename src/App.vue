@@ -24,18 +24,17 @@ import MainComponent from './components/MainComponent.vue';
       getCards() {
         this.store.loading = true
 
-        axios.get(this.store.apiUrl)
+        axios.get(this.store.apiUrl + this.store.endPoint.cards, this.store.options)
         .then((res) => {
           this.store.cards = res.data.data 
           this.store.current_rows = res.data.meta.current_rows
+          this.store.archetypes = res.data.data.map(card => card.archetype)
           console.log(this.store.cards)
-          console.log(this.store.current_rows)
-        
-        })
-        .catch((error) => {
+          console.log(this.store.current_rows)       
+        }).catch((error) => {
           console.log(error);
         }).finally(() => {
-          this.store.loading = false
+          this.store.loading = false;
         });
         
       }

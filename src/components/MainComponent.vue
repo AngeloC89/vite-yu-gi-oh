@@ -16,9 +16,5 @@
 </script>
 
 <style lang="scss" scoped>
-    main {
-        margin: 100px auto;
-      
 
-    }
 </style>
